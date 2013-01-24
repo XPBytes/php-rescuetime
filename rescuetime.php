@@ -75,6 +75,16 @@ class RescueTimeRequest {
 	}
 	
 	/**
+	 * Sets the perspective for the request
+	 *
+	 * @param string $pv perspective
+	 * @return RescueTimeRequest
+	 */
+	public function set_perspective( $pv ) {
+		return $this->set_parameter( 'pv', $pv);
+	}
+	
+	/**
 	 * Sets the resolution for the request
 	 *
 	 * @param string $time resolution string
