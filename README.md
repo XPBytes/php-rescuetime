@@ -1,4 +1,4 @@
-rescuetime-wordpress
+wp-rescuetime
 ====================
 
 WordPress Plugin with PHP API for RescueTime
