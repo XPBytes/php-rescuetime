@@ -1,4 +1,4 @@
-wp-rescuetime
+wp-dj-rescuetime
 ====================
 
 WordPress Plugin with PHP API for RescueTime
