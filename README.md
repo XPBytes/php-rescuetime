@@ -7,9 +7,9 @@ Installation
 --------------------
 Simply place the rescuetime.php in your `plugins` folder. Activate the plugin and you are ready to go.
 
-Usuage
+Usage
 --------------------
-At this time this plugin only provides helper classes to get your data. In the future, it might be able
+At this time this plugin only provides helper classes to get your data. In the future, it will be able
 to display graphs and tables and more fancy stuff so you can show your productivity without the embed
 and process it any way you like.
 
