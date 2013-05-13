@@ -2,6 +2,7 @@ php-rescuetime
 ====================
 
 PHP API for RescueTime
+Licensed under the MIT license
 
 Installation
 --------------------
@@ -10,10 +11,10 @@ Simply place the rescuetime.php somewhere in your website. Require the file and 
 Usage
 --------------------
 
-`require 'rescuetime.php'`
+`require 'api/rescuetime.php'`
 
 For visualisation include [chartjs]( http://www.chartjs.org/ ) on your HTML page.
-And the javascript `rescuetime.js`
+And the javascript `js/rescuetime.js`
 
 
 ###Request
