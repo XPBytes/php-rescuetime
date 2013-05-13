@@ -1,20 +1,23 @@
-wp-dj-rescuetime
+php-rescuetime
 ====================
 
-WordPress Plugin with PHP API for RescueTime
+PHP API for RescueTime
 
 Installation
 --------------------
-Simply place the rescuetime.php in your `plugins` folder. Activate the plugin and you are ready to go.
+Simply place the rescuetime.php somewhere in your website. Require the file and enable the love.
 
 Usage
 --------------------
-At this time this plugin only provides helper classes to get your data. In the future, it will be able
-to display graphs and tables and more fancy stuff so you can show your productivity without the embed
-and process it any way you like.
+
+`require 'rescuetime.php'`
+
+For visualisation include [chartjs]( http://www.chartjs.org/ ) on your HTML page.
+And the javascript `rescuetime.js`
+
 
 ###Request
-To do an API request, you need an `api-key`. Get one [here](https://www.rescuetime.com/anapi/setup)..
+To do an API request, you need an `api-key`. Get one [here]( https://www.rescuetime.com/anapi/setup ).
 Create a new request object:
 		$rt_request = new RescueTimeRequest( $apikey );
 and use one or more of the following functions to manipulate the request:
