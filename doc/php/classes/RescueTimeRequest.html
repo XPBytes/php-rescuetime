@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \RescueTimeRequest</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructs a new Request object"><span class="description">Constructs a new Request object</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_execute" title="execute :: Executes the request"><span class="description">Executes the request</span><pre>execute()</pre></a></li>
+<li class="method public "><a href="#method_get_api_key" title="get_api_key :: Retrieves the API key"><span class="description">Retrieves the API key</span><pre>get_api_key()</pre></a></li>
+<li class="method public "><a href="#method_get_parameter" title="get_parameter :: Retrieves a single parameters value"><span class="description">Retrieves a single parameters value</span><pre>get_parameter()</pre></a></li>
+<li class="method public "><a href="#method_get_parameters" title="get_parameters :: Retrieves the set parameters"><span class="description">Retrieves the set parameters</span><pre>get_parameters()</pre></a></li>
+<li class="method public "><a href="#method_restrict_group" title="restrict_group :: Restricts the request to a certain group"><span class="description">Restricts the request to a certain group</span><pre>restrict_group()</pre></a></li>
+<li class="method public "><a href="#method_restrict_kind" title="restrict_kind :: Restricts the request to a certain kind"><span class="description">Restricts the request to a certain kind</span><pre>restrict_kind()</pre></a></li>
+<li class="method public "><a href="#method_restrict_project" title="restrict_project :: Restricts the request to a certain project"><span class="description">Restricts the request to a certain project</span><pre>restrict_project()</pre></a></li>
+<li class="method public "><a href="#method_restrict_thing" title="restrict_thing :: Restricts the request to a certain taxonomy"><span class="description">Restricts the request to a certain taxonomy</span><pre>restrict_thing()</pre></a></li>
+<li class="method public "><a href="#method_restrict_thingy" title="restrict_thingy :: Restricts the request to a certain subtaxonomy"><span class="description">Restricts the request to a certain subtaxonomy</span><pre>restrict_thingy()</pre></a></li>
+<li class="method public "><a href="#method_restrict_user" title="restrict_user :: Restricts the request to a certain user"><span class="description">Restricts the request to a certain user</span><pre>restrict_user()</pre></a></li>
+<li class="method public "><a href="#method_set_enddate" title="set_enddate :: Sets the end date restriction for the request"><span class="description">Sets the end date restriction for the request</span><pre>set_enddate()</pre></a></li>
+<li class="method public "><a href="#method_set_parameter" title="set_parameter :: Sets an arbitrary parameters value"><span class="description">Sets an arbitrary parameters value</span><pre>set_parameter()</pre></a></li>
+<li class="method public "><a href="#method_set_perspective" title="set_perspective :: Sets the perspective for the request"><span class="description">Sets the perspective for the request</span><pre>set_perspective()</pre></a></li>
+<li class="method public "><a href="#method_set_resolution" title="set_resolution :: Sets the resolution for the request"><span class="description">Sets the resolution for the request</span><pre>set_resolution()</pre></a></li>
+<li class="method public "><a href="#method_set_startdate" title="set_startdate :: Sets the start date restriction for the request"><span class="description">Sets the start date restriction for the request</span><pre>set_startdate()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_get_remote" title="get_remote :: Gets remote data from url"><span class="description">Gets remote data from url</span><pre>get_remote()</pre></a></li>
+<li class="method protected "><a href="#method_parse_date" title="parse_date :: Parses a datetime"><span class="description">Parses a datetime</span><pre>parse_date()</pre></a></li>
+<li class="method protected "><a href="#method_restrict" title="restrict :: Restricts the request on key with value or unsets"><span class="description">Restricts the request on key with value or unsets</span><pre>restrict()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_apikey" title="$apikey :: APIkey provided in the constructor"><span class="description"></span><pre>$apikey</pre></a></li>
+<li class="property protected "><a href="#property_base_url" title="$base_url :: Base URI for the API Requests"><span class="description"></span><pre>$base_url</pre></a></li>
+<li class="property protected "><a href="#property_params" title="$params :: Parameters for the request"><span class="description"></span><pre>$params</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\RescueTimeRequest"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/RescueTimeRequest.html">RescueTimeRequest</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Holds the parameters for a RescueTime API request.</p>
+<div class="details">
+<div class="long_description"><p>The RescueTimeRequest class spawns objects that can be used to execute API
+requests, given a valid key is provided when constructing the object. After
+execution the objects are reusable. All the set methods are chainable.</p></div>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructs a new Request object</h2>
+<pre>__construct(string $apikey) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$apikey</h4>
+<code>string</code><p>the API key</p></div>
+</div></div>
+</div>
+<a id="method_execute"></a><div class="element clickable method public method_execute" data-toggle="collapse" data-target=".method_execute .collapse">
+<h2>Executes the request</h2>
+<pre>execute() : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code><code>null</code>a result object or NULL</div>
+</div></div>
+</div>
+<a id="method_get_api_key"></a><div class="element clickable method public method_get_api_key" data-toggle="collapse" data-target=".method_get_api_key .collapse">
+<h2>Retrieves the API key</h2>
+<pre>get_api_key() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>api key</div>
+</div></div>
+</div>
+<a id="method_get_parameter"></a><div class="element clickable method public method_get_parameter" data-toggle="collapse" data-target=".method_get_parameter .collapse">
+<h2>Retrieves a single parameters value</h2>
+<pre>get_parameter(string $key) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>the parameter</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>the value</div>
+</div></div>
+</div>
+<a id="method_get_parameters"></a><div class="element clickable method public method_get_parameters" data-toggle="collapse" data-target=".method_get_parameters .collapse">
+<h2>Retrieves the set parameters</h2>
+<pre>get_parameters() : string[]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string[]</code></div>
+</div></div>
+</div>
+<a id="method_restrict_group"></a><div class="element clickable method public method_restrict_group" data-toggle="collapse" data-target=".method_restrict_group .collapse">
+<h2>Restricts the request to a certain group</h2>
+<pre>restrict_group(string $group) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>group name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_restrict_kind"></a><div class="element clickable method public method_restrict_kind" data-toggle="collapse" data-target=".method_restrict_kind .collapse">
+<h2>Restricts the request to a certain kind</h2>
+<pre>restrict_kind(string $kind) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$kind</h4>
+<code>string</code><p>kind name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_restrict_project"></a><div class="element clickable method public method_restrict_project" data-toggle="collapse" data-target=".method_restrict_project .collapse">
+<h2>Restricts the request to a certain project</h2>
+<pre>restrict_project(string $project) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$project</h4>
+<code>string</code><p>project name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_restrict_thing"></a><div class="element clickable method public method_restrict_thing" data-toggle="collapse" data-target=".method_restrict_thing .collapse">
+<h2>Restricts the request to a certain taxonomy</h2>
+<pre>restrict_thing(string $thing) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$thing</h4>
+<code>string</code><p>taxonomy name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_restrict_thingy"></a><div class="element clickable method public method_restrict_thingy" data-toggle="collapse" data-target=".method_restrict_thingy .collapse">
+<h2>Restricts the request to a certain subtaxonomy</h2>
+<pre>restrict_thingy(string $thingy) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$thingy</h4>
+<code>string</code><p>taxonomy name</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_restrict_user"></a><div class="element clickable method public method_restrict_user" data-toggle="collapse" data-target=".method_restrict_user .collapse">
+<h2>Restricts the request to a certain user</h2>
+<pre>restrict_user(string $user) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>string</code><p>user name or user e-mail</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_set_enddate"></a><div class="element clickable method public method_set_enddate" data-toggle="collapse" data-target=".method_set_enddate .collapse">
+<h2>Sets the end date restriction for the request</h2>
+<pre>set_enddate(string | int | <a href="http://php.net/manual/en/class.datetime.php">\DateTime</a> $datetime) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$datetime</h4>
+<code>string</code><code>int</code><code><a href="http://php.net/manual/en/class.datetime.php">\DateTime</a></code><p>strtotime string, unix timestamp or DateTime</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_set_parameter"></a><div class="element clickable method public method_set_parameter" data-toggle="collapse" data-target=".method_set_parameter .collapse">
+<h2>Sets an arbitrary parameters value</h2>
+<pre>set_parameter(string $key, string $value) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>the parameter</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>the value</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_set_perspective"></a><div class="element clickable method public method_set_perspective" data-toggle="collapse" data-target=".method_set_perspective .collapse">
+<h2>Sets the perspective for the request</h2>
+<pre>set_perspective(string $pv) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pv</h4>
+<code>string</code><p>perspective</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_set_resolution"></a><div class="element clickable method public method_set_resolution" data-toggle="collapse" data-target=".method_set_resolution .collapse">
+<h2>Sets the resolution for the request</h2>
+<pre>set_resolution(string $time) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$time</h4>
+<code>string</code><p>resolution string</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_set_startdate"></a><div class="element clickable method public method_set_startdate" data-toggle="collapse" data-target=".method_set_startdate .collapse">
+<h2>Sets the start date restriction for the request</h2>
+<pre>set_startdate(string | int | <a href="http://php.net/manual/en/class.datetime.php">\DateTime</a> $datetime) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$datetime</h4>
+<code>string</code><code>int</code><code><a href="http://php.net/manual/en/class.datetime.php">\DateTime</a></code><p>strtotime string, unix timestamp or DateTime</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<a id="method_get_remote"></a><div class="element clickable method protected method_get_remote" data-toggle="collapse" data-target=".method_get_remote .collapse">
+<h2>Gets remote data from url</h2>
+<pre>get_remote(string $url) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>the url</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code><code>null</code>a result object or NULL</div>
+</div></div>
+</div>
+<a id="method_parse_date"></a><div class="element clickable method protected method_parse_date" data-toggle="collapse" data-target=".method_parse_date .collapse">
+<h2>Parses a datetime</h2>
+<pre>parse_date(string | int | <a href="http://php.net/manual/en/class.datetime.php">\DateTime</a> $datetime) : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$datetime</h4>
+<code>string</code><code>int</code><code><a href="http://php.net/manual/en/class.datetime.php">\DateTime</a></code><p>strtotime string, unix timestamp or DateTime</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>Formatted DateTime as Y-m-d or NULL</div>
+</div></div>
+</div>
+<a id="method_restrict"></a><div class="element clickable method protected method_restrict" data-toggle="collapse" data-target=".method_restrict .collapse">
+<h2>Restricts the request on key with value or unsets</h2>
+<pre>restrict(string $key, string $value) : <a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>restriction key</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>restriction value</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/RescueTimeRequest.html">\RescueTimeRequest</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_apikey"> </a><div class="element clickable property protected property_apikey" data-toggle="collapse" data-target=".property_apikey .collapse">
+<h2></h2>
+<pre>$apikey </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>type</th>
+<td>string The APIkey</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_base_url"> </a><div class="element clickable property protected property_base_url" data-toggle="collapse" data-target=".property_base_url .collapse">
+<h2></h2>
+<pre>$base_url </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>type</th>
+<td>string request uri</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_params"> </a><div class="element clickable property protected property_params" data-toggle="collapse" data-target=".property_params .collapse">
+<h2></h2>
+<pre>$params </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>type</th>
+<td>string[] The Request params</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-05-13T05:58:25+02:00.<br></footer></div>
+</div>
+</body>
+</html>

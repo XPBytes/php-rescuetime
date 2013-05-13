@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="rescuetime.php" hash="46b7680dcbce12640eed810379df6e47" package="Default">
+    <docblock line="2">
+      <description>RescueTime</description>
+      <long-description>&lt;p&gt;Enables the Data API for RescueTime in PHP&lt;/p&gt;</long-description>
+      <tag line="2" name="link" description="Source URI" link="https://github.com/XPBytes/php-rescuetime"/>
+      <tag line="2" name="version" description=": 1.0.0"/>
+      <tag line="2" name="author" description=": Derk-Jan Karrenbeld &lt;derk-jan+github@karrenbeld.info&gt;"/>
+      <tag line="2" name="link" description="Author on Github" link="http://github.com/Derkje-J"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="20" package="Default">
+      <extends/>
+      <name>RescueTimeRequest</name>
+      <full_name>\RescueTimeRequest</full_name>
+      <docblock line="13">
+        <description>Holds the parameters for a RescueTime API request.</description>
+        <long-description>&lt;p&gt;The RescueTimeRequest class spawns objects that can be used to execute API
+requests, given a valid key is provided when constructing the object. After
+execution the objects are reusable. All the set methods are chainable.&lt;/p&gt;</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27" namespace="global" package="Default">
+        <name>$apikey</name>
+        <default></default>
+        <docblock line="22">
+          <description>APIkey provided in the constructor</description>
+          <long-description></long-description>
+          <tag line="22" name="internal" description=""/>
+          <tag line="22" name="type" description="string The APIkey"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="34" namespace="global" package="Default">
+        <name>$params</name>
+        <default>array()</default>
+        <docblock line="29">
+          <description>Parameters for the request</description>
+          <long-description></long-description>
+          <tag line="29" name="internal" description=""/>
+          <tag line="29" name="type" description="string[] The Request params"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="42" namespace="global" package="Default">
+        <name>$base_url</name>
+        <default>'https://www.rescuetime.com/anapi/data?'</default>
+        <docblock line="36">
+          <description>Base URI for the API Requests</description>
+          <long-description></long-description>
+          <tag line="36" name="internal" description=""/>
+          <tag line="36" name="type" description="string request uri"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="44">
+          <description>Constructs a new Request object</description>
+          <long-description></long-description>
+          <tag line="44" name="param" description="the API key" type="string" variable="$apikey">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$apikey</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
+        <name>get_api_key</name>
+        <full_name>get_api_key</full_name>
+        <docblock line="52">
+          <description>Retrieves the API key</description>
+          <long-description></long-description>
+          <tag line="52" name="return" description="api key" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="64" package="Default">
+        <name>get_parameters</name>
+        <full_name>get_parameters</full_name>
+        <docblock line="60">
+          <description>Retrieves the set parameters</description>
+          <long-description></long-description>
+          <tag line="60" name="return" description="" type="string[]">
+            <type by_reference="false">string[]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="75" package="Default">
+        <name>get_parameter</name>
+        <full_name>get_parameter</full_name>
+        <docblock line="69">
+          <description>Retrieves a single parameters value</description>
+          <long-description></long-description>
+          <tag line="69" name="param" description="the parameter" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="69" name="return" description="the value" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="75">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="88" package="Default">
+        <name>set_parameter</name>
+        <full_name>set_parameter</full_name>
+        <docblock line="81">
+          <description>Sets an arbitrary parameters value</description>
+          <long-description></long-description>
+          <tag line="81" name="param" description="the parameter" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="81" name="param" description="the value" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="81" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="88">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="99" package="Default">
+        <name>set_perspective</name>
+        <full_name>set_perspective</full_name>
+        <docblock line="93">
+          <description>Sets the perspective for the request</description>
+          <long-description></long-description>
+          <tag line="93" name="param" description="perspective" type="string" variable="$pv">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="93" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$pv</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="Default">
+        <name>set_resolution</name>
+        <full_name>set_resolution</full_name>
+        <docblock line="103">
+          <description>Sets the resolution for the request</description>
+          <long-description></long-description>
+          <tag line="103" name="param" description="resolution string" type="string" variable="$time">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="103" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$time</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="119" package="Default">
+        <name>set_startdate</name>
+        <full_name>set_startdate</full_name>
+        <docblock line="113">
+          <description>Sets the start date restriction for the request</description>
+          <long-description></long-description>
+          <tag line="113" name="param" description="strtotime string, unix timestamp or DateTime" type="string|int|\DateTime" variable="$datetime">
+            <type by_reference="false">string</type>
+            <type by_reference="false">int</type>
+            <type by_reference="false">\DateTime</type>
+          </tag>
+          <tag line="113" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="119">
+          <name>$datetime</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="129" package="Default">
+        <name>set_enddate</name>
+        <full_name>set_enddate</full_name>
+        <docblock line="123">
+          <description>Sets the end date restriction for the request</description>
+          <long-description></long-description>
+          <tag line="123" name="param" description="strtotime string, unix timestamp or DateTime" type="string|int|\DateTime" variable="$datetime">
+            <type by_reference="false">string</type>
+            <type by_reference="false">int</type>
+            <type by_reference="false">\DateTime</type>
+          </tag>
+          <tag line="123" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="129">
+          <name>$datetime</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="139" package="Default">
+        <name>parse_date</name>
+        <full_name>parse_date</full_name>
+        <docblock line="133">
+          <description>Parses a datetime</description>
+          <long-description></long-description>
+          <tag line="133" name="param" description="strtotime string, unix timestamp or DateTime" type="string|int|\DateTime" variable="$datetime">
+            <type by_reference="false">string</type>
+            <type by_reference="false">int</type>
+            <type by_reference="false">\DateTime</type>
+          </tag>
+          <tag line="133" name="return" description="Formatted DateTime as Y-m-d or NULL" type="string|null">
+            <type by_reference="false">string</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="139">
+          <name>$datetime</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="158" package="Default">
+        <name>restrict_user</name>
+        <full_name>restrict_user</full_name>
+        <docblock line="152">
+          <description>Restricts the request to a certain user</description>
+          <long-description></long-description>
+          <tag line="152" name="param" description="user name or user e-mail" type="string" variable="$user">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="152" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="158">
+          <name>$user</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="Default">
+        <name>restrict_group</name>
+        <full_name>restrict_group</full_name>
+        <docblock line="162">
+          <description>Restricts the request to a certain group</description>
+          <long-description></long-description>
+          <tag line="162" name="param" description="group name" type="string" variable="$group">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="162" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="168">
+          <name>$group</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="178" package="Default">
+        <name>restrict_kind</name>
+        <full_name>restrict_kind</full_name>
+        <docblock line="172">
+          <description>Restricts the request to a certain kind</description>
+          <long-description></long-description>
+          <tag line="172" name="param" description="kind name" type="string" variable="$kind">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="172" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="178">
+          <name>$kind</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="188" package="Default">
+        <name>restrict_project</name>
+        <full_name>restrict_project</full_name>
+        <docblock line="182">
+          <description>Restricts the request to a certain project</description>
+          <long-description></long-description>
+          <tag line="182" name="param" description="project name" type="string" variable="$project">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="182" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="188">
+          <name>$project</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="198" package="Default">
+        <name>restrict_thing</name>
+        <full_name>restrict_thing</full_name>
+        <docblock line="192">
+          <description>Restricts the request to a certain taxonomy</description>
+          <long-description></long-description>
+          <tag line="192" name="param" description="taxonomy name" type="string" variable="$thing">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="192" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="198">
+          <name>$thing</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="208" package="Default">
+        <name>restrict_thingy</name>
+        <full_name>restrict_thingy</full_name>
+        <docblock line="202">
+          <description>Restricts the request to a certain subtaxonomy</description>
+          <long-description></long-description>
+          <tag line="202" name="param" description="taxonomy name" type="string" variable="$thingy">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="202" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="208">
+          <name>$thingy</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="219" package="Default">
+        <name>restrict</name>
+        <full_name>restrict</full_name>
+        <docblock line="212">
+          <description>Restricts the request on key with value or unsets</description>
+          <long-description></long-description>
+          <tag line="212" name="param" description="restriction key" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="212" name="param" description="restriction value" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="212" name="return" description="" type="\RescueTimeRequest">
+            <type by_reference="false">\RescueTimeRequest</type>
+          </tag>
+        </docblock>
+        <argument line="219">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="219">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="231" package="Default">
+        <name>execute</name>
+        <full_name>execute</full_name>
+        <docblock line="226">
+          <description>Executes the request</description>
+          <long-description></long-description>
+          <tag line="226" name="return" description="a result object or NULL" type="\RescueTimeResult|null">
+            <type by_reference="false">\RescueTimeResult</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="256" package="Default">
+        <name>get_remote</name>
+        <full_name>get_remote</full_name>
+        <docblock line="250">
+          <description>Gets remote data from url</description>
+          <long-description></long-description>
+          <tag line="250" name="param" description="the url" type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="250" name="return" description="a result object or NULL" type="\RescueTimeResult|null">
+            <type by_reference="false">\RescueTimeResult</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="256">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="global" line="274" package="Default">
+      <extends/>
+      <name>RescueTimeResult</name>
+      <full_name>\RescueTimeResult</full_name>
+      <docblock line="271">
+        <description>Holds the results for a RescueTime API request.</description>
+        <long-description></long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="281" namespace="global" package="Default">
+        <name>$json_data</name>
+        <default></default>
+        <docblock line="276">
+          <description>Result JSON data</description>
+          <long-description></long-description>
+          <tag line="276" name="internal" description=""/>
+          <tag line="276" name="type" description="object The Result JSON data"/>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="288" namespace="global" package="Default">
+        <name>$headers</name>
+        <default>array('rank' =&gt; "Rank", 'date' =&gt; "Date", 'person' =&gt; "Person", 'time' =&gt; "Time Spent (seconds)", 'n' =&gt; "Number of People", 'activity' =&gt; "Activity", 'category' =&gt; "Category", 'productivity' =&gt; "Productivity")</default>
+        <docblock line="283">
+          <description>Annotated headers that can be returned</description>
+          <long-description></long-description>
+          <tag line="283" name="internal" description=""/>
+          <tag line="283" name="type" description="string[] Annotated headers"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="303" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="299">
+          <description>Constructs a new result from json data</description>
+          <long-description></long-description>
+          <tag line="299" name="param" description="encoded json string or json object" type="string|object" variable="$json">
+            <type by_reference="false">string</type>
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="303">
+          <name>$json</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="313" package="Default">
+        <name>is_error</name>
+        <full_name>is_error</full_name>
+        <docblock line="309">
+          <description>Sees if the result has error data</description>
+          <long-description></long-description>
+          <tag line="309" name="return" description="flag true if error" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="321" package="Default">
+        <name>get_perspective</name>
+        <full_name>get_perspective</full_name>
+        <docblock line="317">
+          <description>Returns the perspective of the result</description>
+          <long-description></long-description>
+          <tag line="317" name="return" description="the perspective" type="string|null">
+            <type by_reference="false">string</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="336" package="Default">
+        <name>get_notes</name>
+        <full_name>get_notes</full_name>
+        <docblock line="332">
+          <description>Returns the notes for this request</description>
+          <long-description></long-description>
+          <tag line="332" name="return" description="a result object or NULL" type="\RescueTimeResult|null">
+            <type by_reference="false">\RescueTimeResult</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="344" package="Default">
+        <name>get_row_headers</name>
+        <full_name>get_row_headers</full_name>
+        <docblock line="340">
+          <description>Returns the row headers</description>
+          <long-description></long-description>
+          <tag line="340" name="return" description="" type="string[]">
+            <type by_reference="false">string[]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="354" package="Default">
+        <name>get_column_index</name>
+        <full_name>get_column_index</full_name>
+        <docblock line="348">
+          <description>Gets the column index for a certain header</description>
+          <long-description></long-description>
+          <tag line="348" name="param" description="keys from $this-&gt;headers" type="string" variable="$header">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="348" name="return" description="index in row data" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="354">
+          <name>$header</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="362" package="Default">
+        <name>get_rows</name>
+        <full_name>get_rows</full_name>
+        <docblock line="358">
+          <description>Gets the raw row data</description>
+          <long-description></long-description>
+          <tag line="358" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="370" package="Default">
+        <name>get_rows_by_activity</name>
+        <full_name>get_rows_by_activity</full_name>
+        <docblock line="366">
+          <description>Gets the rows grouped per activity</description>
+          <long-description></long-description>
+          <tag line="366" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="378" package="Default">
+        <name>get_rows_by_category</name>
+        <full_name>get_rows_by_category</full_name>
+        <docblock line="374">
+          <description>Gets the rows grouped per category</description>
+          <long-description></long-description>
+          <tag line="374" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="386" package="Default">
+        <name>get_rows_by_productivity</name>
+        <full_name>get_rows_by_productivity</full_name>
+        <docblock line="382">
+          <description>Gets the rows grouped per productivity</description>
+          <long-description></long-description>
+          <tag line="382" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="394" package="Default">
+        <name>get_rows_by_person</name>
+        <full_name>get_rows_by_person</full_name>
+        <docblock line="390">
+          <description>Gets the rows grouped per person</description>
+          <long-description></long-description>
+          <tag line="390" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="402" package="Default">
+        <name>get_rows_by_date</name>
+        <full_name>get_rows_by_date</full_name>
+        <docblock line="398">
+          <description>Gets the rows grouped per date</description>
+          <long-description></long-description>
+          <tag line="398" name="return" description="rows" type="\int][][]|\string[][]">
+            <type by_reference="false">\int][][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="412" package="Default">
+        <name>get_rows_grouped</name>
+        <full_name>get_rows_grouped</full_name>
+        <docblock line="406">
+          <description>Groups the rows on certain column</description>
+          <long-description></long-description>
+          <tag line="406" name="param" description="column index" type="int" variable="$column">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="406" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="412">
+          <name>$column</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="428" package="Default">
+        <name>get_rows_with_rank</name>
+        <full_name>get_rows_with_rank</full_name>
+        <docblock line="422">
+          <description>Gets a certain row</description>
+          <long-description></long-description>
+          <tag line="422" name="param" description="the rank of the rows" type="int|int[]" variable="$rank">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="422" name="return" description="row or null when not found" type="int[]|string[]|\int[][]|\string[][]|null">
+            <type by_reference="false">int[]</type>
+            <type by_reference="false">string[]</type>
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+            <type by_reference="false">null</type>
+          </tag>
+        </docblock>
+        <argument line="428">
+          <name>$rank</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="455" package="Default">
+        <name>get_rows_with_activity</name>
+        <full_name>get_rows_with_activity</full_name>
+        <docblock line="449">
+          <description>Gets the rows grouped per activity</description>
+          <long-description></long-description>
+          <tag line="449" name="param" description="allowed activities" type="int|int[]" variable="$activity">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="449" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="455">
+          <name>$activity</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="466" package="Default">
+        <name>get_rows_with_category</name>
+        <full_name>get_rows_with_category</full_name>
+        <docblock line="460">
+          <description>Gets the rows grouped per category</description>
+          <long-description></long-description>
+          <tag line="460" name="param" description="allowed categories" type="int|int[]" variable="$category">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="460" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="466">
+          <name>$category</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="477" package="Default">
+        <name>get_rows_with_productivity</name>
+        <full_name>get_rows_with_productivity</full_name>
+        <docblock line="471">
+          <description>Returns the rows with a certain productivity</description>
+          <long-description></long-description>
+          <tag line="471" name="param" description="allowed productivities" type="int|int[]" variable="$productivity">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="471" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="477">
+          <name>$productivity</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="488" package="Default">
+        <name>get_rows_with_person</name>
+        <full_name>get_rows_with_person</full_name>
+        <docblock line="482">
+          <description>Returns the rows with a certain person</description>
+          <long-description></long-description>
+          <tag line="482" name="param" description="allowed persons" type="int|int[]" variable="$person">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="482" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="488">
+          <name>$person</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="500" package="Default">
+        <name>get_rows_between_time</name>
+        <full_name>get_rows_between_time</full_name>
+        <docblock line="493">
+          <description>Returns the rows with a certain time spent</description>
+          <long-description></long-description>
+          <tag line="493" name="param" description="minimum number of seconds spent" type="null|int|\DateTime[]" variable="$min_time">
+            <type by_reference="false">null</type>
+            <type by_reference="false">int</type>
+            <type by_reference="false">\DateTime[]</type>
+          </tag>
+          <tag line="493" name="param" description="maximum number of seconds spent" type="null|int|\DateTime[]" variable="$max_time">
+            <type by_reference="false">null</type>
+            <type by_reference="false">int</type>
+            <type by_reference="false">\DateTime[]</type>
+          </tag>
+          <tag line="493" name="return" description="rows" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="500">
+          <name>$min_time</name>
+          <default>NULL</default>
+          <type/>
+        </argument>
+        <argument line="500">
+          <name>$max_time</name>
+          <default>NULL</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="533" package="Default">
+        <name>get_rows_in_array</name>
+        <full_name>get_rows_in_array</full_name>
+        <docblock line="526">
+          <description>Returns the rows inside a column</description>
+          <long-description></long-description>
+          <tag line="526" name="param" description="column to select on" type="int" variable="$column">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="526" name="param" description="the array to look in" type="\int[][]|\string[][]" variable="$array">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+          <tag line="526" name="return" description="" type="\int[][]|\string[][]">
+            <type by_reference="false">\int[][]</type>
+            <type by_reference="false">\string[][]</type>
+          </tag>
+        </docblock>
+        <argument line="533">
+          <name>$column</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="533">
+          <name>$array</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="549" package="Default">
+        <name>filter_time</name>
+        <full_name>filter_time</full_name>
+        <docblock line="542">
+          <description>Filters the results on activity and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="542" name="param" description="minimal number of seconds spent" type="\numeric" variable="$min_time">
+            <type by_reference="false">\numeric</type>
+          </tag>
+          <tag line="542" name="param" description="maximum number of seconds spent" type="\numeric" variable="$max_time">
+            <type by_reference="false">\numeric</type>
+          </tag>
+          <tag line="542" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="549">
+          <name>$min_time</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="549">
+          <name>$max_time</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="559" package="Default">
+        <name>filter_min_time</name>
+        <full_name>filter_min_time</full_name>
+        <docblock line="553">
+          <description>Filters the results on a minimum number of seconds</description>
+          <long-description></long-description>
+          <tag line="553" name="param" description="minimal number of seconds spent" type="\numeric" variable="$min_time">
+            <type by_reference="false">\numeric</type>
+          </tag>
+          <tag line="553" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="559">
+          <name>$min_time</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="569" package="Default">
+        <name>filter_max_time</name>
+        <full_name>filter_max_time</full_name>
+        <docblock line="563">
+          <description>Filters the results on a maximum number of seconds</description>
+          <long-description></long-description>
+          <tag line="563" name="param" description="maximum number of seconds spent" type="\numeric" variable="$max_time">
+            <type by_reference="false">\numeric</type>
+          </tag>
+          <tag line="563" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="569">
+          <name>$max_time</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="579" package="Default">
+        <name>filter_activity</name>
+        <full_name>filter_activity</full_name>
+        <docblock line="573">
+          <description>Filters the results on activity and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="573" name="param" description="allowed activities" type="int|int[]" variable="$activity">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="573" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="579">
+          <name>$activity</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="589" package="Default">
+        <name>filter_category</name>
+        <full_name>filter_category</full_name>
+        <docblock line="583">
+          <description>Filters the results on category and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="583" name="param" description="allowed categories" type="int|int[]" variable="$category">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="583" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="589">
+          <name>$category</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="599" package="Default">
+        <name>filter_productivity</name>
+        <full_name>filter_productivity</full_name>
+        <docblock line="593">
+          <description>Filters the results on productivity and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="593" name="param" description="allowed productivities" type="int|int[]" variable="$productivity">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="593" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="599">
+          <name>$productivity</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="609" package="Default">
+        <name>filter_unproductive</name>
+        <full_name>filter_unproductive</full_name>
+        <docblock line="603">
+          <description>Filters the results by unproductive rows and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="603" name="param" description="includes productivity neutral" type="boolean" variable="$include_neutral">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="603" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="609">
+          <name>$include_neutral</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="622" package="Default">
+        <name>filter_productive</name>
+        <full_name>filter_productive</full_name>
+        <docblock line="616">
+          <description>Filters the results by productive rows and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="616" name="param" description="includes productivity neutral" type="boolean" variable="$include_neutral">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="616" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="622">
+          <name>$include_neutral</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="635" package="Default">
+        <name>filter_person</name>
+        <full_name>filter_person</full_name>
+        <docblock line="629">
+          <description>Filters the results on person and returns a new RescueTimeResult</description>
+          <long-description></long-description>
+          <tag line="629" name="param" description="allowed person" type="int|int[]" variable="$person">
+            <type by_reference="false">int</type>
+            <type by_reference="false">int[]</type>
+          </tag>
+          <tag line="629" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="635">
+          <name>$person</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="645" package="Default">
+        <name>filter</name>
+        <full_name>filter</full_name>
+        <docblock line="639">
+          <description>Creates a new result from rows</description>
+          <long-description></long-description>
+          <tag line="639" name="param" description="rows" type="\string[][]|\int[][]" variable="$rows">
+            <type by_reference="false">\string[][]</type>
+            <type by_reference="false">\int[][]</type>
+          </tag>
+          <tag line="639" name="return" description="filtered result" type="\RescueTimeResult">
+            <type by_reference="false">\RescueTimeResult</type>
+          </tag>
+        </docblock>
+        <argument line="645">
+          <name>$rows</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
