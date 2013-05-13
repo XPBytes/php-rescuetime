@@ -14,10 +14,8 @@
 
   RescueTime = (function() {
     function RescueTime(chartid) {
-      var context;
-
-      context = document.getElementById(chartid).getContext("2d");
-      this.chart = new Chart(context);
+      this._context = document.getElementById(chartid).getContext("2d");
+      this.chart = new Chart(this._context);
     }
 
     RescueTime.prototype.request = function(url, type) {
@@ -28,11 +26,21 @@
       }).done(function(data) {
         var _ref;
 
-        data = JSON.parse(data);
-        return _this.draw(data['type'], data['data'], (_ref = data['labels']) != null ? _ref : {});
+        _this._data = JSON.parse(data);
+        return _this.draw(_this._data['type'], _this._data['data'], (_ref = _this._data['labels']) != null ? _ref : {});
       }).fail(function(error) {
         return console.log(error);
       });
+    };
+
+    RescueTime.prototype.redraw = function() {
+      var _ref;
+
+      if (this._data == null) {
+        return;
+      }
+      this.chart = new Chart(this._context);
+      return this.draw(this._data['type'], this._data['data'], (_ref = this._data['labels']) != null ? _ref : {});
     };
 
     RescueTime.prototype.draw = function(type, data, display) {

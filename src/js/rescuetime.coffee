@@ -13,8 +13,8 @@ class RescueTime
 	# @param chartid [String] the canvas element id
 	#
 	constructor: ( chartid ) ->
-		context = document.getElementById( chartid ).getContext( "2d" )
-		@chart = new Chart( context )
+		@_context = document.getElementById( chartid ).getContext( "2d" )
+		@chart = new Chart( @_context )
 		
 	# Requests data from an url
 	#
@@ -26,13 +26,21 @@ class RescueTime
 		$.get( url, { type: type } )
 			
 			.done( ( data ) => 
-				data = JSON.parse( data )
-				@draw( data[ 'type' ], data[ 'data' ], data[ 'labels' ] ? { } )
+				@_data = JSON.parse( data )
+				@draw( @_data[ 'type' ], @_data[ 'data' ], @_data[ 'labels' ] ? { } )
 			)
 			
 			.fail( ( error ) ->
 				console.log error
 			)
+	
+	redraw: () ->
+		
+		unless @_data?
+			return
+			
+		@chart = new Chart( @_context )
+		@draw( @_data[ 'type' ], @_data[ 'data' ], @_data[ 'labels' ] ? { } )
 	
 	# Draws data on the screen
 	#
