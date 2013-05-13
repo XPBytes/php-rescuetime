@@ -1,15 +1,32 @@
+###
+# Provides visualisation for Rescuetime PHP api.
+#
+# Licensed under the MIT license
+#
+# @author Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>
+# @version 0.3.0
+###
 class RescueTime
-	
+		
+	# Creates a new RescueTime chart
+	# 
+	# @param chartid [String] the canvas element id
+	#
 	constructor: ( chartid ) ->
 		context = document.getElementById( chartid ).getContext( "2d" )
 		@chart = new Chart( context )
 		
+	# Requests data from an url
+	#
+	# @param url [String] url to request from
+	# @param type [String] type of data to request
+	# @note override this if you don't want to use ajax
+	# 
 	request: ( url, type ) ->
 		$.get( url, { type: type } )
 			
 			.done( ( data ) => 
 				data = JSON.parse( data )
-				console.log data
 				@draw( data[ 'type' ], data[ 'data' ], data[ 'labels' ] ? { } )
 			)
 			
@@ -17,9 +34,14 @@ class RescueTime
 				console.log error
 			)
 	
+	# Draws data on the screen
+	#
+	# @param type [String] type of chart to display
+	# @param data [Object] the data object
+	# @param display [Object] override for labels
+	#
 	draw: ( type, data, display = {} ) ->
 	
-		console.log type, data, display
 		switch type
 		
 			when 'radar'
@@ -39,7 +61,7 @@ class RescueTime
 					total += value
 				
 				for key, value of dataset.data
-					dataset.data[ key ] = value / total
+					dataset.data[ key ] = Math.round( value / total * 100 )
 				
 				data =
 					labels: labels
@@ -47,8 +69,9 @@ class RescueTime
 				
 				options =
 					animationEasing: "easeInOutQuart"
+					tooltips: 
+						labelTemplate: '<%=label%>: <%=value%> percent'
 					
-				console.log data
 				@chart.Radar( data, options ) 
 			
 			when 'bar'
@@ -61,7 +84,7 @@ class RescueTime
 					
 				for key, value of data
 					labels.push display[ key ] ? key
-					dataset.data.push value
+					dataset.data.push Math.round( value / 60 )
 				
 				data =
 					labels: labels
@@ -69,10 +92,9 @@ class RescueTime
 					
 				options =
 					animationEasing: "easeInOutQuart"
+					tooltips: 
+						labelTemplate: '<%=label%>: <%=value%> minutes'
 					
-				console.log data
 				@chart.Bar( data, options ) 
 			
-	
-
 ( exports ? this ).RescueTime = RescueTime
