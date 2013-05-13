@@ -24,10 +24,8 @@
       return $.get(url, {
         type: type
       }).done(function(data) {
-        var _ref;
-
         _this._data = JSON.parse(data);
-        return _this.draw(_this._data['type'], _this._data['data'], (_ref = _this._data['labels']) != null ? _ref : {});
+        return _this.redraw();
       }).fail(function(error) {
         return console.log(error);
       });

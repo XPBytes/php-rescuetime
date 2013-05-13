@@ -27,7 +27,7 @@ class RescueTime
 			
 			.done( ( data ) => 
 				@_data = JSON.parse( data )
-				@draw( @_data[ 'type' ], @_data[ 'data' ], @_data[ 'labels' ] ? { } )
+				@redraw()
 			)
 			
 			.fail( ( error ) ->
