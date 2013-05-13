@@ -1,13 +1,14 @@
 <?php
-/* --------------------------------------------------------------
-/- RescueTime
-/- Source URI: https://github.com/XPBytes/php-rescuetime
-/- Description: Enables the Data API for RescueTime in PHP
-/- Version: 1.0.0
-/- Author: Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>
-/- Author URI: http://www.derk-jan.com
-/  --------------------------------------------------------------
-*/ 
+/**
+ * RescueTime
+ *
+ * Enables the Data API for RescueTime in PHP
+ *
+ * @link https://github.com/XPBytes/php-rescuetime Source URI
+ * @version: 1.0.0
+ * @author: Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>
+ * @link http://github.com/Derkje-J Author on Github 
+ */
 
 /**
  * Holds the parameters for a RescueTime API request. 
@@ -18,9 +19,26 @@
  */
 class RescueTimeRequest {
 	
+	/** 
+	 * APIkey provided in the constructor 
+	 * @internal
+	 * @type string The APIkey
+	 */
 	protected $apikey;
+	
+	/**
+	 * Parameters for the request
+	 * @internal
+	 * @type string[] The Request params
+	 */
 	protected $params = array();
 	
+	/**
+	/**
+	 * Base URI for the API Requests
+	 * @internal 
+	 * @type string request uri
+	 */
 	protected $base_url = 'https://www.rescuetime.com/anapi/data?';
 		
 	/**
@@ -194,7 +212,8 @@ class RescueTimeRequest {
 	/**
 	 * Restricts the request on key with value or unsets
 	 *
-	 * @param string $thingy taxonomy name
+	 * @param string $key restriction key
+	 * @param string $value restriction value
 	 * @return RescueTimeRequest
 	 */
 	protected function restrict( $key, $value ) {
@@ -254,8 +273,18 @@ class RescueTimeRequest {
  */
 class RescueTimeResult { 
 
+	/**
+	 * Result JSON data
+	 * @internal
+	 * @type object The Result JSON data
+	 */
 	protected $json_data;
 	
+	/**
+	 * Annotated headers that can be returned
+	 * @internal
+	 * @type string[] Annotated headers
+	 */
 	protected $headers = array( 
 		'rank' => "Rank",
 		'date' => "Date",
@@ -328,7 +357,7 @@ class RescueTimeResult {
 	
 	/**
 	 * Gets the raw row data
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows() {
 		return $this->json_data->rows;
@@ -336,7 +365,7 @@ class RescueTimeResult {
 	
 	/**
 	 * Gets the rows grouped per activity
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_by_activity( ) {
 		return $this->get_rows_grouped( $this->get_column_index( 'activity' ) );
@@ -344,7 +373,7 @@ class RescueTimeResult {
 	
 	/**
 	 * Gets the rows grouped per category
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_by_category( ) {
 		return $this->get_rows_grouped( $this->get_column_index( 'category' ) );
@@ -352,7 +381,7 @@ class RescueTimeResult {
 	
 	/**
 	 * Gets the rows grouped per productivity
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_by_productivity( ) {
 		return $this->get_rows_grouped( $this->get_column_index( 'productivity' ) );
@@ -360,7 +389,7 @@ class RescueTimeResult {
 	
 	/**
 	 * Gets the rows grouped per person
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_by_person( ) {
 		return $this->get_rows_grouped( $this->get_column_index( 'person' ) );
@@ -368,7 +397,7 @@ class RescueTimeResult {
 	
 	/**
 	 * Gets the rows grouped per date
-	 * @return (int|string)[][] rows
+	 * @return int][][]|string[][] rows
 	 */
 	public function get_rows_by_date( ) {
 		return $this->get_rows_grouped( $this->get_column_index( 'date' ) );
@@ -378,7 +407,7 @@ class RescueTimeResult {
 	 * Groups the rows on certain column
 	 *
 	 * @param int $column column index
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	protected function get_rows_grouped( $column ) {
 		$rows = array();
@@ -394,7 +423,7 @@ class RescueTimeResult {
 	 * Gets a certain row
 	 * 
 	 * @param int|int[] $rank the rank of the rows
-	 * @return (int|string)[]|(int|string)[][]|null row or null when not found
+	 * @return int[]|string[]|int[][]|string[][]|null row or null when not found
 	 */
 	public function get_rows_with_rank( $rank ) {
 		$column = $this->get_column_index( 'rank' );
@@ -421,7 +450,7 @@ class RescueTimeResult {
 	 * Gets the rows grouped per activity
 	 *
 	 * @param int|int[] $activity allowed activities
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_with_activity( $activity ) {
 		$activity = is_array( $activity ) ? $activity : array( $activity );
@@ -432,7 +461,7 @@ class RescueTimeResult {
 	 * Gets the rows grouped per category
 	 *
 	 * @param int|int[] $category allowed categories
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_with_category( $category ) {
 		$category = is_array( $category ) ? $category : array( $category );
@@ -443,7 +472,7 @@ class RescueTimeResult {
 	 * Returns the rows with a certain productivity
 	 *
 	 * @param int|int[] $productivity allowed productivities
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_with_productivity( $productivity ) {
 		$productivity = is_array( $productivity ) ? $productivity : array( $productivity );
@@ -454,7 +483,7 @@ class RescueTimeResult {
 	 * Returns the rows with a certain person
 	 *
 	 * @param int|int[] $person allowed persons
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_with_person( $person ) {
 		$person = is_array( $person ) ? $person : array( $person );
@@ -466,7 +495,7 @@ class RescueTimeResult {
 	 *
 	 * @param null|int|DateTime[] $min_time minimum number of seconds spent
 	 * @param null|int|DateTime[] $max_time maximum number of seconds spent
-	 * @return (int|string)[][] rows
+	 * @return int[][]|string[][] rows
 	 */
 	public function get_rows_between_time( $min_time = NULL, $max_time = NULL ) {
 		if ( empty( $min_time ) && empty( $max_time ) )
@@ -495,10 +524,11 @@ class RescueTimeResult {
 	}
 	
 	/**
-	 * Returns the rows with a certain productivity
+	 * Returns the rows inside a column
 	 *
-	 * @param int|int[] $productivity allowed productivities
-	 * @return (int|string)[][] rows
+	 * @param int $column column to select on
+	 * @param int[][]|string[][] $array the array to look in
+	 * @return int[][]|string[][]
 	 */
 	protected function get_rows_in_array( $column, $array ) {
 		$rows = array();
@@ -533,7 +563,7 @@ class RescueTimeResult {
 	/**
 	 * Filters the results on a maximum number of seconds
 	 *
-	 * @param numeric $min_time maximum number of seconds spent
+	 * @param numeric $max_time maximum number of seconds spent
 	 * @return RescueTimeResult filtered result
 	 */
 	public function filter_max_time( $max_time ) {
@@ -609,7 +639,7 @@ class RescueTimeResult {
 	/**
 	 * Creates a new result from rows
 	 *
-	 * @param (string|int)[][] $rows rows
+	 * @param string[][]|int[][] $rows rows
 	 * @return RescueTimeResult filtered result
 	 */
 	protected function filter( $rows ) {
