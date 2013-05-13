@@ -1,15 +1,13 @@
 <?php
-/*
-Plugin Name: RescueTime for WordPress
-Plugin URI: http://derk-jan.org
-Description: Enables the Data API for RescueTime in WordPress
-Version: 1.0
-Author: Derk-Jan Karrenbeld <derk-jan+wp@karrenbeld.info>
-Author URI: http://www.derk-jan.com
-*/
-
-if( !class_exists( 'WP_Http' ) )
-        include_once( ABSPATH . WPINC. '/class-http.php' );
+/* --------------------------------------------------------------
+/- RescueTime
+/- Source URI: https://github.com/XPBytes/php-rescuetime
+/- Description: Enables the Data API for RescueTime in PHP
+/- Version: 1.0.0
+/- Author: Derk-Jan Karrenbeld <derk-jan+github@karrenbeld.info>
+/- Author URI: http://www.derk-jan.com
+/  --------------------------------------------------------------
+*/ 
 
 /**
  * Holds the parameters for a RescueTime API request. 
@@ -210,7 +208,7 @@ class RescueTimeRequest {
 	 * Executes the request
 	 *
 	 * @return RescueTimeResult|null a result object or NULL
-	 */
+	 */ 
 	public function execute() {
 		
 		// Build the parameters
@@ -224,10 +222,30 @@ class RescueTimeRequest {
 		$url = $this->base_url . http_build_query( $parameters, '', '&' );		
 		
 		// Execue the request
-		$result = wp_remote_retrieve_body( wp_remote_get( $url, array('sslverify' => false ) ) );
+		$result = $this->get_remote( $url, array('sslverify' => false ) );
 		if ( empty( $result ) )
 			return NULL;
 		return new RescueTimeResult( $result );
+	}
+
+	/**
+	 * Gets remote data from url
+	 *
+	 * @param string $url the url
+	 * @return RescueTimeResult|null a result object or NULL
+	 */
+	protected function get_remote( $url ) {
+		$curl = curl_init( $url );
+		
+		curl_setopt( $curl, CURLOPT_HEADER, false );
+		curl_setopt( $curl, CURLOPT_SSL_VERIFYPEER, false );
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+		
+		$result = curl_exec( $curl );
+		
+		curl_close( $curl );
+		
+		return $result;
 	}
 }
 
