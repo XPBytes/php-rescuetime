@@ -124,9 +124,9 @@ class RescueTimeRequest {
 				return $datetime->format( 'Y-m-d' );
 			endif;
 		elseif ( is_string( $datetime ) ) :
-			return $this->set_startdate( new DateTime( "@" . strtotime( $datetime ) ) );
+			return $this->parse_date( new DateTime( "@" . strtotime( $datetime ) ) );
 		elseif ( is_numeric( $datetime ) ) :
-			return $this->set_startdate( new DateTime( "@" . $datetime ) );
+			return $this->parse_date( new DateTime( "@" . $datetime ) );
 		endif;
 		return NULL;
 	}
