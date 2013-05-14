@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='assets/codo.css' type='text/css'>
+  <script src='assets/codo.js'></script>
+  <script src='assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path=''></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='README.md.html' title='Php-rescuetime'>Php-rescuetime</a>
+    &raquo;
+    <a href='class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>README.md</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='class_list.html'>Classes</a>
+      <a id='file_list_link' href='file_list.html'>Files</a>
+      <a id='method_list_link' href='method_list.html'>Methods</a>
+      <a id='extra_list_link' href='extra_list.html'>Extras</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-E</span>
+        Extras list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <nav class='toc'>
+        <p class='title'>
+          <a class='hide_toc' href='#'>
+            <strong>Table of Contents</strong>
+          </a>
+          <small>
+            (<a class='float_toc' href='#'>left</a>)
+          </small>
+        </p>
+      </nav>
+      <div id='filecontents'>
+        <h1>php-rescuetime</h1><p>PHP API for RescueTime
+Licensed under the MIT license</p><h2>Installation</h2><p>Simply place the rescuetime.php somewhere in your website. Require the file and enable the love.</p><h2>Usage</h2><p><code>require &#39;api/rescuetime.php&#39;</code></p><p>For visualisation include <a href="http://www.chartjs.org/">chartjs</a> on your HTML page.
+And the javascript <code>js/rescuetime.js</code></p><h3>Request</h3><p>To do an API request, you need an <code>api-key</code>. Get one <a href="https://www.rescuetime.com/anapi/setup">here</a>.
+Create a new request object:
+        $rt_request = new RescueTimeRequest( $apikey );
+and use one or more of the following functions to manipulate the request:
+- <code>set_perspective</code>: Sets the perspective (rank, member, interval)
+- <code>set_resolution</code>: Sets the resolution (hour, week, day, month)
+- <code>set_startdate</code>: Sets the start date restriction
+- <code>set_enddate</code>: Sets the end date restriction 
+- <code>restrict_user</code>: Restricts to a certain user name or e-mail
+- <code>restrict_group</code>: Restricts to a certain group name
+- <code>restrict_kind</code>: Restricts to a certain kind
+- <code>restrict_project</code>: Restricts to a certain project
+- <code>restrict_thing</code>: Restricts to a certain taxonomy
+- <code>restrict_thingy</code>: Restricts to a certain sub-taxonomy
+The function calls are chainable, so you can:
+        $rt_request-&gt;set_perspective( &#39;interval&#39; )-&gt;set_resolution( &#39;hour&#39; )-&gt;restrict_user( &#39;derk-jan@karrenbeld.info&#39; );
+When you are ready call the execute command:
+        $rt_result = $rt_request-&gt;execute();
+The request object is re-usable.</p><h3>Result</h3><p>You can manipulate the result, as long as the request was valid:
+        $rt_result-&gt;is_error(); //checks if the result has data
+The data returned is tabular and the headers are provided seperately from the rows. Access those:
+- <code>get_rows</code>: Gets the raw row data
+- <code>get_row_headers</code>: Gets the row headers</p><p>You can <code>GROUP BY</code> by issuing one of the <code>get_by</code> commands. Does not manipulate the data:
+- <code>get_rows_by_activity</code>: Group per activity
+- <code>get_rows_by_category</code>: Group per category
+- <code>get_rows_by_productivity</code>: Group per productivity value
+- <code>get_rows_by_person</code>: Group per person (only valid with perspective member)
+- <code>get_rows_by_date</code>: Group per date (only valid with perspective interval)</p><p>You can <code>WHERE</code> data by issuing one of the <code>get_with</code> commands. Simply provide one value or an array of valid values. Does not manipulate the data:
+- <code>get_rows_with_rank</code>: Gets a row with a rank (only valid with perspective rank)
+- <code>get_rows_with_activity</code>: Gets rows with that activity
+- <code>get_rows_with_category</code>: Gets rows with that category
+- <code>get_rows_with_productivity</code>: Gets rows with that productivity
+- <code>get_rows_with_person</code>: Gets rows with that person (only valid with perspective member)
+- <code>get_rows_between_time</code>: Gets rows between min and max time spent</p><p>You can filter data just like <code>WHERE</code> issuing one of the <code>filter</code> commands. Same arguments as the <code>get_with</code> are valid. <strong>Note:</strong> you don&#39;t get a subsection of rows back. Instead a new <code>RescueTimeResult</code> object is created with the subsection of data:
+- <code>filter_time</code>: Filters the data on rows between min and max time spent
+- <code>filter_min_time</code>: Filters the data on rows at least time spent
+- <code>filter_max_time</code>: Filters the data on rows at most time spent
+- <code>filter_activity</code>: Filters the data on rows with that activity
+- <code>filter_category</code>: Filters the data on rows with that category
+- <code>filter_productivity</code>: Filters the data on rows with that productivity
+- <code>filter_unproductive</code>: Filters data to only unproductive rows
+- <code>filter_productive</code>: Filters data to only productive rows
+- <code>filter_person</code> : Filters rows for that person (only valid with perspective member)</p>
+      </div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Mon May 13 2013 05:34:34 GMT+0200 (W. Europe Daylight Time)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v1.5.6
+  (Node.js v0.10.4).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \RescueTimeResult</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructs a new result from json data"><span class="description">Constructs a new result from json data</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_filter_activity" title="filter_activity :: Filters the results on activity and returns a new RescueTimeResult"><span class="description">Filters the results on activity and returns a new RescueTimeResult</span><pre>filter_activity()</pre></a></li>
+<li class="method public "><a href="#method_filter_category" title="filter_category :: Filters the results on category and returns a new RescueTimeResult"><span class="description">Filters the results on category and returns a new RescueTimeResult</span><pre>filter_category()</pre></a></li>
+<li class="method public "><a href="#method_filter_max_time" title="filter_max_time :: Filters the results on a maximum number of seconds"><span class="description">Filters the results on a maximum number of seconds</span><pre>filter_max_time()</pre></a></li>
+<li class="method public "><a href="#method_filter_min_time" title="filter_min_time :: Filters the results on a minimum number of seconds"><span class="description">Filters the results on a minimum number of seconds</span><pre>filter_min_time()</pre></a></li>
+<li class="method public "><a href="#method_filter_person" title="filter_person :: Filters the results on person and returns a new RescueTimeResult"><span class="description">Filters the results on person and returns a new RescueTimeResult</span><pre>filter_person()</pre></a></li>
+<li class="method public "><a href="#method_filter_productive" title="filter_productive :: Filters the results by productive rows and returns a new RescueTimeResult"><span class="description">Filters the results by productive rows and returns a new RescueTimeResult</span><pre>filter_productive()</pre></a></li>
+<li class="method public "><a href="#method_filter_productivity" title="filter_productivity :: Filters the results on productivity and returns a new RescueTimeResult"><span class="description">Filters the results on productivity and returns a new RescueTimeResult</span><pre>filter_productivity()</pre></a></li>
+<li class="method public "><a href="#method_filter_time" title="filter_time :: Filters the results on activity and returns a new RescueTimeResult"><span class="description">Filters the results on activity and returns a new RescueTimeResult</span><pre>filter_time()</pre></a></li>
+<li class="method public "><a href="#method_filter_unproductive" title="filter_unproductive :: Filters the results by unproductive rows and returns a new RescueTimeResult"><span class="description">Filters the results by unproductive rows and returns a new RescueTimeResult</span><pre>filter_unproductive()</pre></a></li>
+<li class="method public "><a href="#method_get_notes" title="get_notes :: Returns the notes for this request"><span class="description">Returns the notes for this request</span><pre>get_notes()</pre></a></li>
+<li class="method public "><a href="#method_get_perspective" title="get_perspective :: Returns the perspective of the result"><span class="description">Returns the perspective of the result</span><pre>get_perspective()</pre></a></li>
+<li class="method public "><a href="#method_get_row_headers" title="get_row_headers :: Returns the row headers"><span class="description">Returns the row headers</span><pre>get_row_headers()</pre></a></li>
+<li class="method public "><a href="#method_get_rows" title="get_rows :: Gets the raw row data"><span class="description">Gets the raw row data</span><pre>get_rows()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_between_time" title="get_rows_between_time :: Returns the rows with a certain time spent"><span class="description">Returns the rows with a certain time spent</span><pre>get_rows_between_time()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_by_activity" title="get_rows_by_activity :: Gets the rows grouped per activity"><span class="description">Gets the rows grouped per activity</span><pre>get_rows_by_activity()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_by_category" title="get_rows_by_category :: Gets the rows grouped per category"><span class="description">Gets the rows grouped per category</span><pre>get_rows_by_category()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_by_date" title="get_rows_by_date :: Gets the rows grouped per date"><span class="description">Gets the rows grouped per date</span><pre>get_rows_by_date()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_by_person" title="get_rows_by_person :: Gets the rows grouped per person"><span class="description">Gets the rows grouped per person</span><pre>get_rows_by_person()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_by_productivity" title="get_rows_by_productivity :: Gets the rows grouped per productivity"><span class="description">Gets the rows grouped per productivity</span><pre>get_rows_by_productivity()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_with_activity" title="get_rows_with_activity :: Gets the rows grouped per activity"><span class="description">Gets the rows grouped per activity</span><pre>get_rows_with_activity()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_with_category" title="get_rows_with_category :: Gets the rows grouped per category"><span class="description">Gets the rows grouped per category</span><pre>get_rows_with_category()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_with_person" title="get_rows_with_person :: Returns the rows with a certain person"><span class="description">Returns the rows with a certain person</span><pre>get_rows_with_person()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_with_productivity" title="get_rows_with_productivity :: Returns the rows with a certain productivity"><span class="description">Returns the rows with a certain productivity</span><pre>get_rows_with_productivity()</pre></a></li>
+<li class="method public "><a href="#method_get_rows_with_rank" title="get_rows_with_rank :: Gets a certain row"><span class="description">Gets a certain row</span><pre>get_rows_with_rank()</pre></a></li>
+<li class="method public "><a href="#method_is_error" title="is_error :: Sees if the result has error data"><span class="description">Sees if the result has error data</span><pre>is_error()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_filter" title="filter :: Creates a new result from rows"><span class="description">Creates a new result from rows</span><pre>filter()</pre></a></li>
+<li class="method protected "><a href="#method_get_column_index" title="get_column_index :: Gets the column index for a certain header"><span class="description">Gets the column index for a certain header</span><pre>get_column_index()</pre></a></li>
+<li class="method protected "><a href="#method_get_rows_grouped" title="get_rows_grouped :: Groups the rows on certain column"><span class="description">Groups the rows on certain column</span><pre>get_rows_grouped()</pre></a></li>
+<li class="method protected "><a href="#method_get_rows_in_array" title="get_rows_in_array :: Returns the rows inside a column"><span class="description">Returns the rows inside a column</span><pre>get_rows_in_array()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_headers" title="$headers :: Annotated headers that can be returned"><span class="description"></span><pre>$headers</pre></a></li>
+<li class="property protected "><a href="#property_json_data" title="$json_data :: Result JSON data"><span class="description"></span><pre>$json_data</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\RescueTimeResult"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/RescueTimeResult.html">RescueTimeResult</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Holds the results for a RescueTime API request.</p>
+<div class="details">
+<div class="long_description"></div>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructs a new result from json data</h2>
+<pre>__construct(string | object $json) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$json</h4>
+<code>string</code><code>object</code><p>encoded json string or json object</p></div>
+</div></div>
+</div>
+<a id="method_filter_activity"></a><div class="element clickable method public method_filter_activity" data-toggle="collapse" data-target=".method_filter_activity .collapse">
+<h2>Filters the results on activity and returns a new RescueTimeResult</h2>
+<pre>filter_activity(int | int[] $activity) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$activity</h4>
+<code>int</code><code>int[]</code><p>allowed activities</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_category"></a><div class="element clickable method public method_filter_category" data-toggle="collapse" data-target=".method_filter_category .collapse">
+<h2>Filters the results on category and returns a new RescueTimeResult</h2>
+<pre>filter_category(int | int[] $category) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$category</h4>
+<code>int</code><code>int[]</code><p>allowed categories</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_max_time"></a><div class="element clickable method public method_filter_max_time" data-toggle="collapse" data-target=".method_filter_max_time .collapse">
+<h2>Filters the results on a maximum number of seconds</h2>
+<pre>filter_max_time(\numeric $max_time) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$max_time</h4>
+<code>\numeric</code><p>maximum number of seconds spent</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_min_time"></a><div class="element clickable method public method_filter_min_time" data-toggle="collapse" data-target=".method_filter_min_time .collapse">
+<h2>Filters the results on a minimum number of seconds</h2>
+<pre>filter_min_time(\numeric $min_time) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$min_time</h4>
+<code>\numeric</code><p>minimal number of seconds spent</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_person"></a><div class="element clickable method public method_filter_person" data-toggle="collapse" data-target=".method_filter_person .collapse">
+<h2>Filters the results on person and returns a new RescueTimeResult</h2>
+<pre>filter_person(int | int[] $person) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$person</h4>
+<code>int</code><code>int[]</code><p>allowed person</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_productive"></a><div class="element clickable method public method_filter_productive" data-toggle="collapse" data-target=".method_filter_productive .collapse">
+<h2>Filters the results by productive rows and returns a new RescueTimeResult</h2>
+<pre>filter_productive(boolean $include_neutral) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$include_neutral</h4>
+<code>boolean</code><p>includes productivity neutral</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_productivity"></a><div class="element clickable method public method_filter_productivity" data-toggle="collapse" data-target=".method_filter_productivity .collapse">
+<h2>Filters the results on productivity and returns a new RescueTimeResult</h2>
+<pre>filter_productivity(int | int[] $productivity) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$productivity</h4>
+<code>int</code><code>int[]</code><p>allowed productivities</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_time"></a><div class="element clickable method public method_filter_time" data-toggle="collapse" data-target=".method_filter_time .collapse">
+<h2>Filters the results on activity and returns a new RescueTimeResult</h2>
+<pre>filter_time(\numeric $min_time, \numeric $max_time) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$min_time</h4>
+<code>\numeric</code><p>minimal number of seconds spent</p></div>
+<div class="subelement argument">
+<h4>$max_time</h4>
+<code>\numeric</code><p>maximum number of seconds spent</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_filter_unproductive"></a><div class="element clickable method public method_filter_unproductive" data-toggle="collapse" data-target=".method_filter_unproductive .collapse">
+<h2>Filters the results by unproductive rows and returns a new RescueTimeResult</h2>
+<pre>filter_unproductive(boolean $include_neutral) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$include_neutral</h4>
+<code>boolean</code><p>includes productivity neutral</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_get_notes"></a><div class="element clickable method public method_get_notes" data-toggle="collapse" data-target=".method_get_notes .collapse">
+<h2>Returns the notes for this request</h2>
+<pre>get_notes() : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a> | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code><code>null</code>a result object or NULL</div>
+</div></div>
+</div>
+<a id="method_get_perspective"></a><div class="element clickable method public method_get_perspective" data-toggle="collapse" data-target=".method_get_perspective .collapse">
+<h2>Returns the perspective of the result</h2>
+<pre>get_perspective() : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>the perspective</div>
+</div></div>
+</div>
+<a id="method_get_row_headers"></a><div class="element clickable method public method_get_row_headers" data-toggle="collapse" data-target=".method_get_row_headers .collapse">
+<h2>Returns the row headers</h2>
+<pre>get_row_headers() : string[]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string[]</code></div>
+</div></div>
+</div>
+<a id="method_get_rows"></a><div class="element clickable method public method_get_rows" data-toggle="collapse" data-target=".method_get_rows .collapse">
+<h2>Gets the raw row data</h2>
+<pre>get_rows() : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_between_time"></a><div class="element clickable method public method_get_rows_between_time" data-toggle="collapse" data-target=".method_get_rows_between_time .collapse">
+<h2>Returns the rows with a certain time spent</h2>
+<pre>get_rows_between_time(null | int | <a href="http://php.net/manual/en/class.datetime.php">\DateTime[]</a> $min_time, null | int | <a href="http://php.net/manual/en/class.datetime.php">\DateTime[]</a> $max_time) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$min_time</h4>
+<code>null</code><code>int</code><code><a href="http://php.net/manual/en/class.datetime.php">\DateTime[]</a></code><p>minimum number of seconds spent</p></div>
+<div class="subelement argument">
+<h4>$max_time</h4>
+<code>null</code><code>int</code><code><a href="http://php.net/manual/en/class.datetime.php">\DateTime[]</a></code><p>maximum number of seconds spent</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_by_activity"></a><div class="element clickable method public method_get_rows_by_activity" data-toggle="collapse" data-target=".method_get_rows_by_activity .collapse">
+<h2>Gets the rows grouped per activity</h2>
+<pre>get_rows_by_activity() : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_by_category"></a><div class="element clickable method public method_get_rows_by_category" data-toggle="collapse" data-target=".method_get_rows_by_category .collapse">
+<h2>Gets the rows grouped per category</h2>
+<pre>get_rows_by_category() : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_by_date"></a><div class="element clickable method public method_get_rows_by_date" data-toggle="collapse" data-target=".method_get_rows_by_date .collapse">
+<h2>Gets the rows grouped per date</h2>
+<pre>get_rows_by_date() : \int][][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int][][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_by_person"></a><div class="element clickable method public method_get_rows_by_person" data-toggle="collapse" data-target=".method_get_rows_by_person .collapse">
+<h2>Gets the rows grouped per person</h2>
+<pre>get_rows_by_person() : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_by_productivity"></a><div class="element clickable method public method_get_rows_by_productivity" data-toggle="collapse" data-target=".method_get_rows_by_productivity .collapse">
+<h2>Gets the rows grouped per productivity</h2>
+<pre>get_rows_by_productivity() : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_with_activity"></a><div class="element clickable method public method_get_rows_with_activity" data-toggle="collapse" data-target=".method_get_rows_with_activity .collapse">
+<h2>Gets the rows grouped per activity</h2>
+<pre>get_rows_with_activity(int | int[] $activity) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$activity</h4>
+<code>int</code><code>int[]</code><p>allowed activities</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_with_category"></a><div class="element clickable method public method_get_rows_with_category" data-toggle="collapse" data-target=".method_get_rows_with_category .collapse">
+<h2>Gets the rows grouped per category</h2>
+<pre>get_rows_with_category(int | int[] $category) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$category</h4>
+<code>int</code><code>int[]</code><p>allowed categories</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_with_person"></a><div class="element clickable method public method_get_rows_with_person" data-toggle="collapse" data-target=".method_get_rows_with_person .collapse">
+<h2>Returns the rows with a certain person</h2>
+<pre>get_rows_with_person(int | int[] $person) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$person</h4>
+<code>int</code><code>int[]</code><p>allowed persons</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_with_productivity"></a><div class="element clickable method public method_get_rows_with_productivity" data-toggle="collapse" data-target=".method_get_rows_with_productivity .collapse">
+<h2>Returns the rows with a certain productivity</h2>
+<pre>get_rows_with_productivity(int | int[] $productivity) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$productivity</h4>
+<code>int</code><code>int[]</code><p>allowed productivities</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_with_rank"></a><div class="element clickable method public method_get_rows_with_rank" data-toggle="collapse" data-target=".method_get_rows_with_rank .collapse">
+<h2>Gets a certain row</h2>
+<pre>get_rows_with_rank(int | int[] $rank) : int[] | string[] | \int[][] | \string[][] | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rank</h4>
+<code>int</code><code>int[]</code><p>the rank of the rows</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int[]</code><code>string[]</code><code>\int[][]</code><code>\string[][]</code><code>null</code>row or null when not found</div>
+</div></div>
+</div>
+<a id="method_is_error"></a><div class="element clickable method public method_is_error" data-toggle="collapse" data-target=".method_is_error .collapse">
+<h2>Sees if the result has error data</h2>
+<pre>is_error() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>flag true if error</div>
+</div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method protected method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Creates a new result from rows</h2>
+<pre>filter(\string[][] | \int[][] $rows) : <a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rows</h4>
+<code>\string[][]</code><code>\int[][]</code><p>rows</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/RescueTimeResult.html">\RescueTimeResult</a></code>filtered result</div>
+</div></div>
+</div>
+<a id="method_get_column_index"></a><div class="element clickable method protected method_get_column_index" data-toggle="collapse" data-target=".method_get_column_index .collapse">
+<h2>Gets the column index for a certain header</h2>
+<pre>get_column_index(string $header) : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$header</h4>
+<code>string</code><p>keys from $this->headers</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>int</code>index in row data</div>
+</div></div>
+</div>
+<a id="method_get_rows_grouped"></a><div class="element clickable method protected method_get_rows_grouped" data-toggle="collapse" data-target=".method_get_rows_grouped .collapse">
+<h2>Groups the rows on certain column</h2>
+<pre>get_rows_grouped(int $column) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>int</code><p>column index</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>rows</div>
+</div></div>
+</div>
+<a id="method_get_rows_in_array"></a><div class="element clickable method protected method_get_rows_in_array" data-toggle="collapse" data-target=".method_get_rows_in_array .collapse">
+<h2>Returns the rows inside a column</h2>
+<pre>get_rows_in_array(int $column, \int[][] | \string[][] $array) : \int[][] | \string[][]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>int</code><p>column to select on</p></div>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>\int[][]</code><code>\string[][]</code><p>the array to look in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\int[][]</code><code>\string[][]</code>
+</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_headers"> </a><div class="element clickable property protected property_headers" data-toggle="collapse" data-target=".property_headers .collapse">
+<h2></h2>
+<pre>$headers </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>type</th>
+<td>string[] Annotated headers</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_json_data"> </a><div class="element clickable property protected property_json_data" data-toggle="collapse" data-target=".property_json_data .collapse">
+<h2></h2>
+<pre>$json_data </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>type</th>
+<td>object The Result JSON data</td>
+</tr>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-05-13T05:58:25+02:00.<br></footer></div>
+</div>
+</body>
+</html>
