@@ -4,6 +4,8 @@ php-rescuetime
 PHP API for RescueTime
 Licensed under the MIT license
 
+See this online at http://rescuetime.derk-jan.org/
+
 Installation
 --------------------
 Simply place the rescuetime.php somewhere in your website. Require the file and enable the love.
